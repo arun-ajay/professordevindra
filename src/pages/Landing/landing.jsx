@@ -14,6 +14,7 @@ export default class Landing extends Component{
         return(
             <Grid.Row className = {styles.customRow}>
                 <Grid.Column textAlign = {"center"} verticalAlign = {"middle"} width = {16} className = {styles.customColumn}>
+                test
                 </Grid.Column>
             </Grid.Row>
         )
