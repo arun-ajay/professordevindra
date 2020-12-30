@@ -66,7 +66,7 @@ export const servicesData = [
         ]
     },
     {
-        "institute": "Undergraduate College Prep/Advisement",
+        "institute": "Undergraduate College Prep",
         "services": [
             {
                 "service": "College Search Process",
