@@ -31,12 +31,12 @@ export default class Services extends Component{
                     <List.Icon name = "circle" color = {colors[index]}/>
                     <List.Content>
                         <List.Header>
-                            <Header as='h3'>
+                            <Header as='h4' className = {styles.textColor}>
                                 {data.service}
                             </Header>
                         </List.Header>
                         <List.Description>
-                            <i>
+                            <i className = {styles.textColor}>
                                 {data.subBullet}
                             </i>
                         </List.Description>
@@ -54,13 +54,14 @@ export default class Services extends Component{
         var animation = [
             "fly right","fly left"
         ]
+
         var cardArray = servicesData.map((data,index) => {
             return (
-                <Transition animation = {animation[index%2]} duration = {700+(index)*300} visible = {this.state.open}>
-                <Card  className = {styles.customCard} color = {"blue"}>
+                <Transition animation = {animation[index%2]} duration = {700+(index)*200} visible = {this.state.open}>
+                <Card  className = {styles.customCard}>
                     <Card.Content >
                         <Card.Header textAlign = {"center"}>
-                            <Header as = "h1">
+                            <Header as = "h3" className = {styles.textColor}>
                                 {data.institute}
                             </Header>
                         </Card.Header>
@@ -76,16 +77,17 @@ export default class Services extends Component{
                 </Transition>
             )
         })
+
         
         return(
             <Grid.Row className = {styles.customRow}>
-                <Grid.Column only = {"computer"} width = {4}/>
-                <Grid.Column only = {"computer"} verticalAlign = {"middle"} width = {8} className = {styles.customColumn}>
+                <Grid.Column only = {"computer"} width = {1}/>
+                <Grid.Column only = {"computer"} verticalAlign = {"middle"} width = {14} className = {styles.customColumn}>
                     <Card.Group itemsPerRow={2}>
                         {cardArray}
                     </Card.Group>
                 </Grid.Column>
-                <Grid.Column only = {"computer"} width = {4}/>
+                <Grid.Column only = {"computer"} width = {1}/>
                 <Grid.Column only = {"mobile tablet"} width = {1}/>
                 <Grid.Column only = {"mobile tablet"} verticalAlign = {"middle"} width = {14} className = {styles.customColumn}>
                     <Card.Group itemsPerRow={1}>
