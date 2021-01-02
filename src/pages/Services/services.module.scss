@@ -12,10 +12,31 @@
 
 
 .customCard{
-  background: rgba(0,0,0,0.7) !important;
   -webkit-box-shadow: 3px 3px 5px 6px black !important;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px black  !important;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 5px 6px black !important;
+}
+
+.customCardHeader{
+  background: #3C99DC !important;
+  border-top-left-radius: 0.285714rem;
+  border-top-right-radius: 0.285714rem;
+
+}
+
+.customCardContent{
+  padding: 0em 0em !important ;
+  margin-bottom: 20px !important;
+
+}
+
+.customCardDescription{
+  padding-left: 10px !important;
+}
+
+.headerColor{
+  color: white !important;
+  font-size: 30px !important;
 
 }
 

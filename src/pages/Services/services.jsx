@@ -59,13 +59,13 @@ export default class Services extends Component{
             return (
                 <Transition animation = {animation[index%2]} duration = {700+(index)*200} visible = {this.state.open}>
                 <Card  className = {styles.customCard}>
-                    <Card.Content >
-                        <Card.Header textAlign = {"center"}>
-                            <Header as = "h3" className = {styles.textColor}>
+                    <Card.Content className = {styles.customCardContent}>
+                        <Card.Header textAlign = {"center"} className = {styles.customCardHeader}>
+                            <Header as = "h3" className = {styles.headerColor}>
                                 {data.institute}
                             </Header>
                         </Card.Header>
-                        <Card.Description>
+                        <Card.Description className = {styles.customCardDescription}>
                             <List>
                             {this.generateList(data.services)}
     

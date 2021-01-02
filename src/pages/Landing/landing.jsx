@@ -28,7 +28,8 @@ export default class Landing extends Component{
         var tutoringTypes = ["One to One", "Face to Face", "Hybrid"]
         return(
             <Grid.Row className = {styles.customRow}>
-                <Grid.Column  textAlign = {"center"} width = {16} className = {styles.customColumn}>
+                <Grid.Column width = {2}/>
+                <Grid.Column  textAlign = {"center"} width = {12} className = {styles.customColumn}>
                     <div className = {styles.landingHero}>
                         
 
@@ -61,6 +62,10 @@ export default class Landing extends Component{
                         </span>
                         </Transition>
                     </div>
+                </Grid.Column>
+                <Grid.Column width = {2}/>
+                <Grid.Column width = {16} textAlign = {"center"}>
+                    testimonial
                 </Grid.Column>
             </Grid.Row>
         )

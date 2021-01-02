@@ -1,15 +1,11 @@
-import React from 'react';
 import {Icon} from 'semantic-ui-react';
 
 
 export const menuJson = [
     {
-        "display": "Professor Devindra"
-    },
-    {
         "name": "Home",
         "to": "/",
-        "display": <Icon name = {"home"}/>
+        "display": <Icon name = {"home"}/> 
     },
     {
         "name": "Services",

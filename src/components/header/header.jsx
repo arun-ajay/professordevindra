@@ -64,8 +64,8 @@ export default class SiteHeader extends Component{
         
         return(
             <Grid.Row className = {styles.customRow}>
-                <Grid.Column width = {16} className = {styles.customColumn}>
-                    <Menu inverted borderless stackable className = {styles.customMenu}>
+                <Grid.Column textAlign = {"center"} width = {16} className = {styles.customColumn}>
+                    <Menu compact inverted borderless stackable className = {styles.customMenu}>
                         {menuArray}
                     </Menu>
                 </Grid.Column>
