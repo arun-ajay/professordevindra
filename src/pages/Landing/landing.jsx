@@ -77,6 +77,38 @@ export default class Landing extends Component{
             </div>
         })
 
+        var mobileStudentTestimonialArray = studentTestimonial.map((data,index) => {
+            return <div>
+                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                            <i className = {styles.mobileTestimonial}>
+                                "{data.testimonial}"                             
+                            </i>
+                            <br></br>
+                        </Container>
+                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                            <i className = {styles.mobileTestimonial}>
+                                {data.name}
+                            </i>
+                        </Container>
+            </div>
+        })
+
+        var mobileParentTestimonialArray = parentTestimonial.map((data,index) => {
+            return <div>
+                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                            <i className = {styles.mobileTestimonial}>
+                                "{data.testimonial}"                             
+                            </i>
+                            <br></br>
+                        </Container>
+                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                            <i className = {styles.mobileTestimonial}>
+                                {data.name}
+                            </i>
+                        </Container>
+            </div>
+        })
+
         return(
             <Grid.Row className = {styles.customRow}>
                 <Grid.Column only = {"computer"} stretched  width = {4}>
@@ -184,6 +216,203 @@ export default class Landing extends Component{
                     </Grid>
 
                 </Grid.Column>
+
+
+
+
+                <Grid.Column only = {"tablet"}  textAlign = {"center"} width = {16} className = {styles.customColumn}>
+                    <div className = {styles.landingHero}>
+                        
+
+                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                        
+                        <span className = {styles.tabletTagline}>
+                        
+                        <br></br>
+                            Private, one-to-one tutoring using an online or in-person or hybrid learning management system
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
+                        <span className = {styles.tabletTagline}>
+                            Professor Devindra
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
+                        <span className = {styles.tabletTagline}>
+                            Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1400} visible = {this.state.open}>
+                        <span className = {styles.quote}>
+                            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                                <i className = {styles.tabletPhil}>
+                                "I believe that the teaching/learning process is an interactive, engaging experience that begins with providing content knowledge aligned to the common core standards integrated with patience, understanding and care. By extension, it is an opportunity to mentor and guide rather than to lead the student. It is about building relationships with students to help them realize their full potential while laying a solid foundation for their future."
+                                </i>
+                                <br></br>
+                            </Container>
+                            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                                <i className = {styles.phil}>
+                                    - Professor Devindra
+                                </i>
+                            </Container>
+
+                        </span>
+                        </Transition>
+                    </div>
+                </Grid.Column>
+
+                <Grid.Column only = {"tablet"} stretched  width = {8}>
+                    <Grid className = {styles.customGrid} >
+
+                        <Grid.Row verticalAlign = {"bottom"} >
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                                <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <span>
+                                        <div className = {styles.tabletTestimonialTagline}>Student Testimonials</div>
+                                        <OwlCarousel className = {styles.tabletCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                            {studentTestimonialArray}
+                                        </OwlCarousel>
+                                    </span>
+                                </Transition>
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+                    </Grid>
+
+                </Grid.Column>
+
+                <Grid.Column only = {"tablet"} stretched  width = {8}>
+                    <Grid className = {styles.customGrid} >
+                        <Grid.Row verticalAlign = {"bottom"} >
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                                <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <span>
+                                        <div className = {styles.tabletTestimonialTagline}>Parent Testimonials</div>
+                                        <OwlCarousel className = {styles.tabletCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                            {parentTestimonialArray}
+                                        </OwlCarousel>
+                                    </span>
+                                </Transition>
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+                    </Grid>
+                </Grid.Column>
+
+                <Grid.Column only = {"tablet"} textAlign = {"center"} width = {16}>
+                    <br></br>
+                    <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
+                        <Icon name='mail outline' />
+                        professordevindra@gmail.com
+                    </Button>
+
+                </Grid.Column>
+
+
+
+
+                <Grid.Column only = {"mobile"}  textAlign = {"center"} width = {16} className = {styles.customColumn}>
+                    <div className = {styles.landingHero}>
+                        
+
+                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                        
+                        <span className = {styles.mobileTagline}>
+                        
+                        <br></br>
+                            Private, one-to-one tutoring using an online or in-person or hybrid learning management system
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
+                        <span className = {styles.mobileTagline}>
+                            Professor Devindra
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
+                        <span className = {styles.mobileTagline}>
+                            Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1400} visible = {this.state.open}>
+                        <span className = {styles.quote}>
+                            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                                <i className = {styles.mobilePhil}>
+                                "I believe that the teaching/learning process is an interactive, engaging experience that begins with providing content knowledge aligned to the common core standards integrated with patience, understanding and care. By extension, it is an opportunity to mentor and guide rather than to lead the student. It is about building relationships with students to help them realize their full potential while laying a solid foundation for their future."
+                                </i>
+                                <br></br>
+                            </Container>
+                            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                                <i className = {styles.mobilePhil}>
+                                    - Professor Devindra
+                                </i>
+                            </Container>
+
+                        </span>
+                        </Transition>
+                    </div>
+                </Grid.Column>
+
+                <Grid.Column only = {"mobile"} stretched  width = {8}>
+                    <Grid className = {styles.customGrid} >
+
+                        <Grid.Row verticalAlign = {"bottom"} >
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                                <Transition animation = {"fade right"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <span>
+                                        <div className = {styles.mobileTestimonialTagline}>Student Testimonials</div>
+                                        <OwlCarousel className = {styles.mobileCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                            {mobileStudentTestimonialArray}
+                                        </OwlCarousel>
+                                    </span>
+                                </Transition>
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+                    </Grid>
+
+                </Grid.Column>
+
+                <Grid.Column only = {"mobile"} stretched  width = {8}>
+                    <Grid className = {styles.customGrid} >
+                        <Grid.Row verticalAlign = {"bottom"} >
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                                <Transition animation = {"fade left"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <span>
+                                        <div className = {styles.mobileTestimonialTagline}>Parent Testimonials</div>
+                                        <OwlCarousel className = {styles.mobileCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                            {mobileParentTestimonialArray}
+                                        </OwlCarousel>
+                                    </span>
+                                </Transition>
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+                    </Grid>
+                </Grid.Column>
+
+                <Grid.Column only = {"mobile"} textAlign = {"center"} width = {16}>
+                    <br>
+                    </br>
+                    <br></br>
+                    <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
+                        <Icon name='mail outline' />
+                        professordevindra@gmail.com
+                    </Button>
+
+                </Grid.Column>
+
+
+
             </Grid.Row>
 
         )
