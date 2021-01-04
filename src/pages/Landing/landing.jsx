@@ -84,7 +84,7 @@ export default class Landing extends Component{
                         <Grid.Row verticalAlign = {"middle"}>
                             <Grid.Column textAlign = {"center"} width = {16}>
                             <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
-                                <Button onClick = {() => this.openEmail()} size = {"massive"} icon labelPosition='left' className = {styles.email}>
+                                <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
                                     <Icon name='mail outline' />
                                     professordevindra@gmail.com
                                 </Button>
@@ -185,6 +185,7 @@ export default class Landing extends Component{
 
                 </Grid.Column>
             </Grid.Row>
+
         )
     } 
 }
