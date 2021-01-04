@@ -29,7 +29,6 @@ class App extends Component {
                 <Redirect from = "/*"  to = "/"/>
             </Switch>
           </Router>
-  
         </Grid>
   
     );

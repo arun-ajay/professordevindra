@@ -5,11 +5,11 @@ export const menuJson = [
     {
         "name": "Home",
         "to": "/",
-        "display": <Icon name = {"home"}/> 
+        "display": <span><Icon name = {"home"}/>   Home </span>
     },
     {
         "name": "Services",
         "to": "/services",
-        "display": "Services"
+        "display": <span><Icon name = {"book"}/>   Services </span>
     }
 ]

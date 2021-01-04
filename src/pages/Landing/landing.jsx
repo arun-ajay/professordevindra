@@ -31,7 +31,7 @@ export default class Landing extends Component{
     
 
     openEmail = () => {
-        window.location.href = `mailto:${"professordevindra@gmail.com"}`;
+        window.location.href = `mailto:${"professordevindra@gmail.com"}?subject=${"Requesting for Consultation"}&body=${"Dear Professor Devindra, %0D%0A %0D%0A My name is [BLANK] and I am inquiring about your [SERVICE]. %0D%0A %0D%0A Please contact me at [###-###-####] at your earliest convenience. %0D%0A %0D%0A Thank you for your time and consideration. %0D%0A %0D%0A Sincerely, %0D%0A [BLANK]"}`;
     }
 
 
