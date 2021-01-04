@@ -17,7 +17,7 @@ export default class SiteFooter extends Component{
         return(
             <Grid.Row className = {styles.customRow}>
                 <Grid.Column textAlign = {"center"} verticalAlign = {"middle"} width = {16} className = {styles.customColumn}>
-                    <Button  labelPosition= {"left"} onClick = {this.handleFooterLabelClick}>
+                    {/* <Button  labelPosition= {"left"} onClick = {this.handleFooterLabelClick}>
                         <Label circular  icon = {"github"} color = {"black"}/>
                         <Button compact circular animated = {"vertical"} color = {"black"}>
                             <Button.Content visible>
@@ -27,6 +27,10 @@ export default class SiteFooter extends Component{
                                 Site Admin
                             </Button.Content>
                         </Button>
+                    </Button> */}
+                    <Button compact  icon labelPosition='left' className = {styles.email}>
+                        <Icon name='mail outline' />
+                        Contact Me
                     </Button>
                 </Grid.Column>
             </Grid.Row>

@@ -1,12 +1,18 @@
 import React,{Component} from 'react';
 import styles from "pages/Landing/landing.module.scss";
 
-import {Grid,Image,Transition,Header,Container} from 'semantic-ui-react'
+import {Grid,Image,Transition,Icon,Container,Button} from 'semantic-ui-react'
 
-import books from "pages/Landing/assets/laptop.png"
+import laptop from "pages/Landing/assets/laptop.png"
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import {studentTestimonial} from "pages/Landing/data"
+
+import {parentTestimonial} from "pages/Landing/data"
+ 
+
 
 
 export default class Landing extends Component{
@@ -24,13 +30,79 @@ export default class Landing extends Component{
     }
     
 
+    openEmail = () => {
+        window.location.href = `mailto:${"professordevindra@gmail.com"}`;
+    }
+
 
   
     render () { 
+
+        const slideSpeed = 500;
+        const slideStay = 10000
+
+        var studentTestimonialArray = studentTestimonial.map((data,index) => {
+            return <span>
+                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                            <i className = {styles.testimonial}>
+                                "{data.testimonial}"                             
+                            </i>
+                            <br></br>
+                        </Container>
+                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                            <i className = {styles.testimonial}>
+                                {data.name}
+                            </i>
+                        </Container>
+            </span>
+        })
+
+        var parentTestimonialArray = parentTestimonial.map((data,index) => {
+            return <span>
+                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                            <i className = {styles.testimonial}>
+                                "{data.testimonial}"                             
+                            </i>
+                            <br></br>
+                        </Container>
+                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                            <i className = {styles.testimonial}>
+                                {data.name}
+                            </i>
+                        </Container>
+            </span>
+        })
+
         return(
             <Grid.Row className = {styles.customRow}>
-                <Grid.Column width = {4}/>
-                <Grid.Column  textAlign = {"center"} width = {8} className = {styles.customColumn}>
+                <Grid.Column only = {"computer"} stretched  width = {4}>
+                    <Grid className = {styles.customGrid} >
+                        <Grid.Row verticalAlign = {"middle"}>
+                            <Grid.Column textAlign = {"center"} width = {16}>
+                            <Button onClick = {() => this.openEmail()} size = {"massive"} icon labelPosition='left' className = {styles.email}>
+                                <Icon name='mail outline' />
+                                professordevindra@gmail.com
+                            </Button>
+
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+
+                        <Grid.Row verticalAlign = {"bottom"}>
+
+                            <Grid.Column stretched width = {16}>
+                                <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                    {parentTestimonialArray}
+                                </OwlCarousel>
+                            </Grid.Column>
+
+                        </Grid.Row>
+
+                    </Grid>
+
+                </Grid.Column>
+                <Grid.Column only = {"computer"}  textAlign = {"center"} width = {8} className = {styles.customColumn}>
                     <div className = {styles.landingHero}>
                         
 
@@ -56,51 +128,38 @@ export default class Landing extends Component{
                         </span>
                         </Transition>
                         <Transition animation = {"fade down"} duration = {1500} visible = {this.state.open}>
-                        <Container fluid className = {styles.quote}>
-                            <span className = {styles.phil}>
-                                <i>
+                        <span className = {styles.quote}>
+                            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                                <i className = {styles.phil}>
                                 "I believe that the teaching/learning process is an interactive, engaging experience that begins with providing content knowledge aligned to the common core standards integrated with patience, understanding and care. By extension, it is an opportunity to mentor and guide rather than to lead the student. It is about building relationships with students to help them realize their full potential while laying a solid foundation for their future."
                                 </i>
                                 <br></br>
-                            </span>
-                            <span className = {styles.philAuthor}>
-                                <i>
+                            </Container>
+                            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                                <i className = {styles.phil}>
                                     - Professor Devindra
                                 </i>
-                            </span>
-                        </Container>
+                            </Container>
+
+                        </span>
                         </Transition>
                     </div>
                 </Grid.Column>
-                <Grid.Column stretched  width = {4}>
+                <Grid.Column only = {"computer"} stretched  width = {4}>
                     <Grid className = {styles.customGrid} >
                         <Grid.Row verticalAlign = {"top"}>
-
                             <Grid.Column width = {16}>
-                                <Image verticalAlign = {"middle"} size = {"large"} src = {books} className = {styles.booksImage}/>
-
+                                <Image verticalAlign = {"middle"} size = {"large"} src = {laptop} className = {styles.booksImage}/>
                             </Grid.Column>
 
                         </Grid.Row>
-                        <Grid.Row>
 
-                        </Grid.Row>
+                        <Grid.Row verticalAlign = {"bottom"} >
 
-                        <Grid.Row verticalAlign = {"bottom"}>
-
-                            <Grid.Column width = {16}>
-                            {/* <Carousel>
-                <div>
-                    <img src = {books}/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel> */}
+                            <Grid.Column stretched width = {16}>
+                                <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                    {studentTestimonialArray}
+                                </OwlCarousel>
                             </Grid.Column>
 
                         </Grid.Row>

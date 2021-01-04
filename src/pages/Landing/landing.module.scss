@@ -25,28 +25,40 @@
 
 .phil{
   text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
-  font-size:  25px !important;
+  font-size:  22px !important;
   color: #ffd56b;
   line-height: 40px;
-  text-align: justify;
 }
 
-.philAuthor{
+.testimonial{
   text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
-  font-size:  25px !important;
+  font-size:  22px !important;
   color: #ffd56b;
   line-height: 40px;
-  text-align: right;
+
 }
 
-.landingHero{
+.carousel{
+  height: 500px !important;
+  background-color: rgba(0,0,0,.5) !important;
+  border-radius: .5em !important;
+}
 
-  // border-radius: 5px;
+
+
+.philHero{
+
+  padding: 5px;
 
 
 }
 
 .quote{
-  background-color: rgba(0,0,0,.5);
-  border-radius: 2em;
+  background-color: rgba(0,0,0,.5) !important;
+  border-radius: .5em !important;
+}
+
+.email{
+  background-color: rgba(147,155,98,.80) !important;
+  color: white !important
 }
