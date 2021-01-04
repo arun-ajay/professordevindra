@@ -33,9 +33,6 @@ export default class SiteHeader extends Component{
         else if (window.location.pathname === "/services"){
             path = "Services"
         }
-        else if (window.location.pathname.startsWith("/contactme")){
-            path = "Contact Me"
-        }
         this.setState({
             activeItem: path
         })

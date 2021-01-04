@@ -8,7 +8,6 @@ import {
 import Header from "components/header/header";
 import Footer from "components/footer/footer";
 import Services from "pages/Services/services";
-import ContactMe from "pages/ContactMe/contactme";
 import Landing from "pages/Landing/landing";
 import React,{Component} from 'react';
 
@@ -26,7 +25,6 @@ class App extends Component {
             <Switch>
                 <Route exact path = "/" component = {Landing}/>
                 <Route exact path = "/services" component = {Services}/>
-                <Route exact path = "/contactme" component = {ContactMe}/>
                 <Redirect from = "/home" to = "/"/>
                 <Redirect from = "/*"  to = "/"/>
             </Switch>

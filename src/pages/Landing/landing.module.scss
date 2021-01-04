@@ -1,13 +1,21 @@
+
+.customGrid{
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+
+}
+
 .customRow{
   min-height: 87vh !important;
 }
 
 
 .tagline{
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3) !important;
-  font-size:  30px !important;
-  color: #3C99DC;
-  line-height: 40px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.5) !important;
+  // text-shadow: 1px 2px black;
+  font-size:  50px !important;
+  color: #ff7b54;
+  line-height: 60px;
   font-weight: bold;
 }
 
@@ -16,15 +24,29 @@
 }
 
 .phil{
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3) !important;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
   font-size:  25px !important;
-  color: #D5F3FE;
+  color: #ffd56b;
   line-height: 40px;
+  text-align: justify;
+}
+
+.philAuthor{
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
+  font-size:  25px !important;
+  color: #ffd56b;
+  line-height: 40px;
+  text-align: right;
 }
 
 .landingHero{
 
-  border-radius: 5px;
+  // border-radius: 5px;
 
 
+}
+
+.quote{
+  background-color: rgba(0,0,0,.5);
+  border-radius: 2em;
 }
