@@ -39,10 +39,14 @@ export default class Landing extends Component{
     render () { 
 
         const slideSpeed = 500;
-        const slideStay = 10000
+        const slideStay = 10000;
+
+        const leftColumnAnimation = "fade right";
+        const rightColumnAnimation = "fade left";
+        const leftRightColumnAnimationSpeed = 1000;
 
         var studentTestimonialArray = studentTestimonial.map((data,index) => {
-            return <span>
+            return <div>
                         <Container textAlign = {"justified"} fluid className = {styles.philHero} >
                             <i className = {styles.testimonial}>
                                 "{data.testimonial}"                             
@@ -54,11 +58,11 @@ export default class Landing extends Component{
                                 {data.name}
                             </i>
                         </Container>
-            </span>
+            </div>
         })
 
         var parentTestimonialArray = parentTestimonial.map((data,index) => {
-            return <span>
+            return <div>
                         <Container textAlign = {"justified"} fluid className = {styles.philHero} >
                             <i className = {styles.testimonial}>
                                 "{data.testimonial}"                             
@@ -70,7 +74,7 @@ export default class Landing extends Component{
                                 {data.name}
                             </i>
                         </Container>
-            </span>
+            </div>
         })
 
         return(
@@ -79,10 +83,12 @@ export default class Landing extends Component{
                     <Grid className = {styles.customGrid} >
                         <Grid.Row verticalAlign = {"middle"}>
                             <Grid.Column textAlign = {"center"} width = {16}>
-                            <Button onClick = {() => this.openEmail()} size = {"massive"} icon labelPosition='left' className = {styles.email}>
-                                <Icon name='mail outline' />
-                                professordevindra@gmail.com
-                            </Button>
+                            <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                <Button onClick = {() => this.openEmail()} size = {"massive"} icon labelPosition='left' className = {styles.email}>
+                                    <Icon name='mail outline' />
+                                    professordevindra@gmail.com
+                                </Button>
+                            </Transition>
 
                             </Grid.Column>
 
@@ -91,10 +97,15 @@ export default class Landing extends Component{
 
                         <Grid.Row verticalAlign = {"bottom"}>
 
-                            <Grid.Column stretched width = {16}>
-                                <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                    {parentTestimonialArray}
-                                </OwlCarousel>
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                            <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                <span>
+                                    <div className = {styles.testimonialTagline}>Parent Testimonials</div>
+                                    <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                        {parentTestimonialArray}
+                                    </OwlCarousel>
+                                </span>
+                            </Transition>
                             </Grid.Column>
 
                         </Grid.Row>
@@ -121,13 +132,13 @@ export default class Landing extends Component{
                             <br></br><br></br>
                         </span>
                         </Transition>
-                        <Transition animation = {"fade down"} duration = {1500} visible = {this.state.open}>
+                        <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
                         <span className = {styles.tagline}>
                             Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
                             <br></br><br></br>
                         </span>
                         </Transition>
-                        <Transition animation = {"fade down"} duration = {1500} visible = {this.state.open}>
+                        <Transition animation = {"fade down"} duration = {1400} visible = {this.state.open}>
                         <span className = {styles.quote}>
                             <Container textAlign = {"justified"} fluid className = {styles.philHero} >
                                 <i className = {styles.phil}>
@@ -149,17 +160,23 @@ export default class Landing extends Component{
                     <Grid className = {styles.customGrid} >
                         <Grid.Row verticalAlign = {"top"}>
                             <Grid.Column width = {16}>
-                                <Image verticalAlign = {"middle"} size = {"large"} src = {laptop} className = {styles.booksImage}/>
+                                <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <Image verticalAlign = {"middle"} size = {"large"} src = {laptop} className = {styles.booksImage}/>
+                                </Transition>
                             </Grid.Column>
 
                         </Grid.Row>
 
                         <Grid.Row verticalAlign = {"bottom"} >
-
-                            <Grid.Column stretched width = {16}>
-                                <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                    {studentTestimonialArray}
-                                </OwlCarousel>
+                            <Grid.Column textAlign = {"center"} stretched width = {16}>
+                                <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                    <span>
+                                        <div className = {styles.testimonialTagline}>Student Testimonials</div>
+                                        <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
+                                            {studentTestimonialArray}
+                                        </OwlCarousel>
+                                    </span>
+                                </Transition>
                             </Grid.Column>
 
                         </Grid.Row>
