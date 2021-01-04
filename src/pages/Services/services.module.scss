@@ -15,10 +15,11 @@
   -webkit-box-shadow: 3px 3px 5px 6px black !important;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px black  !important;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 5px 6px black !important;
+  background: rgba(0,0,0,0.7) !important
 }
 
 .customCardHeader{
-  background: #ff7b54 !important;
+  // background: #939b62 !important;
   border-top-left-radius: 0.285714rem;
   border-top-right-radius: 0.285714rem;
 
@@ -37,12 +38,14 @@
 .headerColor{
   color: white !important;
   font-size: 30px !important;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.3) !important;
 
 }
 
 .textColor{
   color: #ffb26b !important;
   font-size:  25px !important;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.9) !important;
 }
 
 .customCard:hover{

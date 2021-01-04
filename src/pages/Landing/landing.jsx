@@ -5,6 +5,9 @@ import {Grid,Image,Transition,Header,Container} from 'semantic-ui-react'
 
 import books from "pages/Landing/assets/laptop.png"
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
 
 export default class Landing extends Component{
     state = {
@@ -86,7 +89,18 @@ export default class Landing extends Component{
                         <Grid.Row verticalAlign = {"bottom"}>
 
                             <Grid.Column width = {16}>
-                                Testimonials
+                            {/* <Carousel>
+                <div>
+                    <img src = {books}/>
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel> */}
                             </Grid.Column>
 
                         </Grid.Row>
