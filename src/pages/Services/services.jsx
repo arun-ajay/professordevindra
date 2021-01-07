@@ -57,7 +57,7 @@ export default class Services extends Component{
 
         var cardArray = servicesData.map((data,index) => {
             return (
-                <Transition animation = {animation[index%2]} duration = {1000+(index)*200} visible = {this.state.open}>
+                <Transition animation = {animation[index%2]} duration = {700+(index)*200} visible = {this.state.open}>
                 <Card  className = {styles.customCard}>
                     <Card.Content className = {styles.customCardContent}>
                         <Card.Header textAlign = {"center"} className = {styles.customCardHeader}>
