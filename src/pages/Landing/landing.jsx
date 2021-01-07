@@ -396,12 +396,12 @@ export default class Landing extends Component{
                     </div>
                 </Grid.Column>
 
-                <Grid.Column only = {"mobile"} stretched  width = {8}>
+                <Grid.Column only = {"mobile"} stretched  width = {16}>
                     <Grid className = {styles.customGrid} >
 
                         <Grid.Row verticalAlign = {"bottom"} >
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
-                                <Transition animation = {"fade right"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                <Transition animation = {"fade down"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
                                         <div className = {styles.mobileTestimonialTagline}>Parent Testimonials</div>
                                         <CarouselProvider         
@@ -425,11 +425,11 @@ export default class Landing extends Component{
 
                 </Grid.Column>
 
-                <Grid.Column only = {"mobile"} stretched  width = {8}>
+                <Grid.Column only = {"mobile"} stretched  width = {16}>
                     <Grid className = {styles.customGrid} >
                         <Grid.Row verticalAlign = {"bottom"} >
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
-                                <Transition animation = {"fade left"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                <Transition animation = {"fade down"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
                                         <div className = {styles.mobileTestimonialTagline}>Student Testimonials</div>
                                         <CarouselProvider         
