@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import styles from "pages/Services/services.module.scss";
 
-import {Grid,Transition,Card,List,Header} from 'semantic-ui-react'
+import {Grid,Transition,Card,List,Header,Button,Icon} from 'semantic-ui-react'
 
 import {servicesData} from "pages/Services/data"
 
@@ -17,6 +17,10 @@ export default class Services extends Component{
             open: true
             }
         )
+    }
+
+    openEmail = () => {
+        window.location.href = `mailto:${"professordevindra@gmail.com"}?subject=${"Requesting for Consultation"}&body=${"Dear Professor Devindra, %0D%0A %0D%0A My name is [BLANK] and I am inquiring about your [SERVICE]. %0D%0A %0D%0A Please contact me at [###-###-####] at your earliest convenience. %0D%0A %0D%0A Thank you for your time and consideration. %0D%0A %0D%0A Sincerely, %0D%0A [BLANK]"}`;
     }
 
     generateList = (servicesData) => {
@@ -88,6 +92,7 @@ export default class Services extends Component{
                     </Card.Group>
                 </Grid.Column>
                 <Grid.Column only = {"computer"} width = {1}/>
+
                 <Grid.Column only = {"mobile tablet"} width = {1}/>
                 <Grid.Column only = {"mobile tablet"} verticalAlign = {"middle"} width = {14} className = {styles.customColumn}>
                     <Card.Group itemsPerRow={1}>
@@ -95,6 +100,18 @@ export default class Services extends Component{
                     </Card.Group>
                 </Grid.Column>
                 <Grid.Column only = {"mobile tablet"} width = {1}/>
+
+
+                <Grid.Column textAlign = {"center"} width = {16}>
+                    <br>
+                    </br>
+                    <br></br>
+                    <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
+                        <Icon name='mail outline' />
+                        professordevindra@gmail.com
+                    </Button>
+
+                </Grid.Column>
             </Grid.Row>
         )
     } 
