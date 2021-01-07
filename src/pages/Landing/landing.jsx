@@ -4,13 +4,14 @@ import styles from "pages/Landing/landing.module.scss";
 import {Grid,Image,Transition,Icon,Container,Button} from 'semantic-ui-react'
 
 import laptop from "pages/Landing/assets/laptop.png"
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 import {studentTestimonial} from "pages/Landing/data"
 
 import {parentTestimonial} from "pages/Landing/data"
+
+
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
  
 
 
@@ -37,77 +38,80 @@ export default class Landing extends Component{
 
   
     render () { 
-
-        const slideSpeed = 500;
         const slideStay = 10000;
 
         const leftColumnAnimation = "fade right";
         const rightColumnAnimation = "fade left";
         const leftRightColumnAnimationSpeed = 1000;
 
-        var studentTestimonialArray = studentTestimonial.map((data,index) => {
-            return <div>
-                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
-                            <i className = {styles.testimonial}>
-                                "{data.testimonial}"                             
-                            </i>
-                            <br></br>
-                        </Container>
-                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                            <i className = {styles.testimonial}>
-                                {data.name}
-                            </i>
-                        </Container>
-            </div>
+        var studentTestimonialsArray = studentTestimonial.map((data,index) => {
+            return <Slide index = {index}>
+            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                <i className = {styles.testimonial}>
+                    "{data.testimonial}"                             
+                </i>
+                <br></br>
+            </Container>
+            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                <i className = {styles.testimonial}>
+                    {data.name}
+                </i>
+            </Container>
+
+            </Slide>
+        })
+        var parentTestimonialsArray = parentTestimonial.map((data,index) => {
+            return <Slide index = {index}>
+            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                <i className = {styles.testimonial}>
+                    "{data.testimonial}"                             
+                </i>
+                <br></br>
+            </Container>
+            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                <i className = {styles.testimonial}>
+                    {data.name}
+                </i>
+            </Container>
+
+            </Slide>
         })
 
-        var parentTestimonialArray = parentTestimonial.map((data,index) => {
-            return <div>
-                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
-                            <i className = {styles.testimonial}>
-                                "{data.testimonial}"                             
-                            </i>
-                            <br></br>
-                        </Container>
-                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                            <i className = {styles.testimonial}>
-                                {data.name}
-                            </i>
-                        </Container>
-            </div>
+
+        var mobileStudentTestimonialsArray = studentTestimonial.map((data,index) => {
+            return <Slide index = {index}>
+            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                <i className = {styles.mobileTestimonial}>
+                    "{data.testimonial}"                             
+                </i>
+                <br></br>
+            </Container>
+            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                <i className = {styles.mobileTestimonial}>
+                    {data.name}
+                </i>
+            </Container>
+
+            </Slide>
         })
 
-        var mobileStudentTestimonialArray = studentTestimonial.map((data,index) => {
-            return <div>
-                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
-                            <i className = {styles.mobileTestimonial}>
-                                "{data.testimonial}"                             
-                            </i>
-                            <br></br>
-                        </Container>
-                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                            <i className = {styles.mobileTestimonial}>
-                                {data.name}
-                            </i>
-                        </Container>
-            </div>
+        var mobileParentTestimonialsArray = parentTestimonial.map((data,index) => {
+            return <Slide index = {index}>
+            <Container textAlign = {"justified"} fluid className = {styles.philHero} >
+                <i className = {styles.mobileTestimonial}>
+                    "{data.testimonial}"                             
+                </i>
+                <br></br>
+            </Container>
+            <Container textAlign = {"right"} fluid className = {styles.philHero} >
+                <i className = {styles.mobileTestimonial}>
+                    {data.name}
+                </i>
+            </Container>
+
+            </Slide>
         })
 
-        var mobileParentTestimonialArray = parentTestimonial.map((data,index) => {
-            return <div>
-                        <Container textAlign = {"justified"} fluid className = {styles.philHero} >
-                            <i className = {styles.mobileTestimonial}>
-                                "{data.testimonial}"                             
-                            </i>
-                            <br></br>
-                        </Container>
-                        <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                            <i className = {styles.mobileTestimonial}>
-                                {data.name}
-                            </i>
-                        </Container>
-            </div>
-        })
 
         return(
             <Grid.Row className = {styles.customRow}>
@@ -132,10 +136,18 @@ export default class Landing extends Component{
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
                             <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                 <span>
-                                    <div className = {styles.testimonialTagline}>Parent Testimonials</div>
-                                    <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                        {parentTestimonialArray}
-                                    </OwlCarousel>
+                                        <div className = {styles.testimonialTagline}>Parent Testimonials</div>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={parentTestimonial.length} className = {styles.carousel}>
+                                        <Slider>
+                                            {parentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                 </span>
                             </Transition>
                             </Grid.Column>
@@ -204,9 +216,17 @@ export default class Landing extends Component{
                                 <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
                                         <div className = {styles.testimonialTagline}>Student Testimonials</div>
-                                        <OwlCarousel className = {styles.carousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                            {studentTestimonialArray}
-                                        </OwlCarousel>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={studentTestimonial.length} className = {styles.carousel}>
+                                        <Slider>
+                                            {studentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                     </span>
                                 </Transition>
                             </Grid.Column>
@@ -269,12 +289,20 @@ export default class Landing extends Component{
 
                         <Grid.Row verticalAlign = {"bottom"} >
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
-                                <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
+                                <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
-                                        <div className = {styles.tabletTestimonialTagline}>Student Testimonials</div>
-                                        <OwlCarousel className = {styles.tabletCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                            {studentTestimonialArray}
-                                        </OwlCarousel>
+                                        <div className = {styles.tabletTestimonialTagline}>Parent Testimonials</div>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={parentTestimonial.length} className = {styles.tabletCarousel}>
+                                        <Slider>
+                                            {parentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                     </span>
                                 </Transition>
                             </Grid.Column>
@@ -290,11 +318,19 @@ export default class Landing extends Component{
                         <Grid.Row verticalAlign = {"bottom"} >
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
                                 <Transition animation = {rightColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
-                                    <span>
-                                        <div className = {styles.tabletTestimonialTagline}>Parent Testimonials</div>
-                                        <OwlCarousel className = {styles.tabletCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                            {parentTestimonialArray}
-                                        </OwlCarousel>
+                                <span>
+                                        <div className = {styles.tabletTestimonialTagline}>Student Testimonials</div>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={studentTestimonial.length} className = {styles.tabletCarousel}>
+                                        <Slider>
+                                            {studentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                     </span>
                                 </Transition>
                             </Grid.Column>
@@ -367,10 +403,18 @@ export default class Landing extends Component{
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
                                 <Transition animation = {"fade right"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
-                                        <div className = {styles.mobileTestimonialTagline}>Student Testimonials</div>
-                                        <OwlCarousel className = {styles.mobileCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                            {mobileStudentTestimonialArray}
-                                        </OwlCarousel>
+                                        <div className = {styles.mobileTestimonialTagline}>Parent Testimonials</div>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={parentTestimonial.length} className = {styles.mobileCarousel}>
+                                        <Slider>
+                                            {mobileParentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                     </span>
                                 </Transition>
                             </Grid.Column>
@@ -387,10 +431,18 @@ export default class Landing extends Component{
                             <Grid.Column textAlign = {"center"} stretched width = {16}>
                                 <Transition animation = {"fade left"} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
                                     <span>
-                                        <div className = {styles.mobileTestimonialTagline}>Parent Testimonials</div>
-                                        <OwlCarousel className = {styles.mobileCarousel} autoplayTimeout = {slideStay} smartSpeed = {slideSpeed} items = {1} autoplay = {true} loop = {true} >
-                                            {mobileParentTestimonialArray}
-                                        </OwlCarousel>
+                                        <div className = {styles.mobileTestimonialTagline}>Student Testimonials</div>
+                                        <CarouselProvider         
+                                            naturalSlideWidth={100}
+                                            isIntrinsicHeight = {true}
+                                            interval = {slideStay}
+                                            isPlaying = {true}
+                                            totalSlides={studentTestimonial.length} className = {styles.mobileCarousel}>
+                                        <Slider>
+                                            {mobileStudentTestimonialsArray}
+                                        </Slider>
+
+                                        </CarouselProvider>
                                     </span>
                                 </Transition>
                             </Grid.Column>
