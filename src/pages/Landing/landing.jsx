@@ -53,7 +53,7 @@ export default class Landing extends Component{
                 <br></br>
             </Container>
             <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                <i className = {styles.testimonialAuthor}>
+                <i className = {styles.testimonial}>
                     {data.name}
                 </i>
             </Container>
@@ -69,7 +69,7 @@ export default class Landing extends Component{
                 <br></br>
             </Container>
             <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                <i className = {styles.testimonialAuthor}>
+                <i className = {styles.testimonial}>
                     {data.name}
                 </i>
             </Container>
@@ -191,7 +191,7 @@ export default class Landing extends Component{
                                 <br></br>
                             </Container>
                             <Container textAlign = {"right"} fluid className = {styles.philHero} >
-                                <i className = {styles.philAuthor}>
+                                <i className = {styles.phil}>
                                     - Professor Devindra
                                 </i>
                             </Container>

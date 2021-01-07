@@ -11,19 +11,19 @@
 
 
 .tagline{
-  text-shadow: 1px 2px 1px rgba(0,0,0,1) !important;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.5) !important;
   // text-shadow: 1px 2px black;
   font-size:  50px !important;
-  color: #ffd56b;
+  color: #ff7b54;
   line-height: 60px;
   font-weight: bold;
 }
 
 .testimonialTagline{
-  text-shadow: 1px 2px 1px rgba(0,0,0,1) !important;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.5) !important;
   // text-shadow: 1px 2px black;
   font-size:  40px !important;
-  color: #ff7b54;
+  color: #939b62;
   line-height: 50px;
   font-weight: bold;
 
@@ -36,30 +36,14 @@
 .phil{
   text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
   font-size:  22px !important;
-  color: #939b62;
+  color: #ffd56b;
   line-height: 40px;
-}
-
-.philAuthor{
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
-  font-size:  22px !important;
-  color: #ffb26b;
-  line-height: 40px;
-
 }
 
 .testimonial{
-  text-shadow: 1px 3px 2px rgba(0,0,0,0.5) !important;
-  font-size:  22px !important;
-  color: #939b62;
-  line-height: 40px;
-
-}
-
-.testimonialAuthor{
   text-shadow: 2px 4px 3px rgba(0,0,0,0.5) !important;
   font-size:  22px !important;
-  color: #ffb26b;
+  color: #ffd56b;
   line-height: 40px;
 
 }
@@ -85,7 +69,7 @@
 }
 
 .email{
-  background-color: rgba(147,155,98,.9) !important;
+  background-color: rgba(147,155,98,.80) !important;
   color: white !important
 }
 
