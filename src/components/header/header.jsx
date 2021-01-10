@@ -26,7 +26,7 @@ export default class SiteHeader extends Component{
 
 
     openEmail = () => {
-        window.location.href = `mailto:${"professordevindra@gmail.com"}?subject=${"Request to Discuss Tutorial Services"}&body=${"Dear Professor Devindra, %0D%0A %0D%0A My name is [BLANK] and I am inquiring about your [SERVICE]. %0D%0A %0D%0A Please contact me at [###-###-####] at your earliest convenience. %0D%0A %0D%0A Thank you for your time and consideration. %0D%0A %0D%0A Sincerely, %0D%0A [BLANK]"}`;
+        window.location.href = `mailto:${"professordevindra@gmail.com"}?subject=${"INQUIRY: Tutorial Services"}&body=${"Dear Professor Devindra, %0D%0A %0D%0A My name is [BLANK] and I am inquiring about your [SERVICE]. %0D%0A %0D%0A Please contact me at [###-###-####] at your earliest convenience. %0D%0A %0D%0A Thank you for your time and consideration. %0D%0A %0D%0A Sincerely, %0D%0A [BLANK]"}`;
     }
 
     componentDidMount(){
