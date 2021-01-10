@@ -61,7 +61,7 @@ export default class SiteHeader extends Component{
         })
 
         menuArray.push(
-            <Menu.Item className = {styles.customMenuContact} name = {"Contact"} onClick = {() => this.openEmail()}> <span><Icon name = {"mail outline"}/> Contact: Email Me: professordevindra@gmail.com </span> </Menu.Item>
+            <Menu.Item className = {styles.customMenuContact} name = {"Contact"} onClick = {() => this.openEmail()}> <span><Icon name = {"mail outline"}/> Email Me: professordevindra@gmail.com </span> </Menu.Item>
         )
         
 

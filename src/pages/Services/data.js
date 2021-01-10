@@ -4,38 +4,38 @@ import {Icon} from 'semantic-ui-react';
 
 export const servicesData = [
     {
-        "institute": "K-12 Math & English Language Arts",
+        "institute": "K-12 Math & English Language Arts Tutoring",
         "services": [
             {
-                "service": "Common Core",
+                "service": "Adhering to Common Core Standards in New York State",
                 "subBullet": null
             },
             {
-                "service": "COOP",
+                "service": "Cooperative Admissions Examination Program (COOP)",
                 "subBullet": null
             },
             {
-                "service": "SHSAT",
+                "service": "Specialized High School Admissions Test (SHSAT)",
                 "subBullet": null
             },
             {
-                "service": "SSAT",
+                "service": "Secondary School Admission Test (SSAT)",
                 "subBullet": null
             },
             {
-                "service": "HSPT",
+                "service": "High School Placement Test (HSPT)",
+                "subBullet": "Catholic High School Tests For: Regis, Xavier, Loyola, Fordham and others"
+            },
+            {
+                "service": "Independent School Entrance Exam (ISEE)",
                 "subBullet": null
             },
             {
-                "service": "ISEE",
+                "service": "Test for Admission into Catholic High Schools (TACHS)",
                 "subBullet": null
             },
             {
-                "service": "TACHS",
-                "subBullet": null
-            },
-            {
-                "service": "Regents",
+                "service": "New York State Regents Preparation",
                 "subBullet": null
             }
         ]
@@ -52,8 +52,8 @@ export const servicesData = [
                 "subBullet": null
             },
             {
-                "service": "SAT II - Subject Tests",
-                "subBullet": null
+                "service": "SAT II",
+                "subBullet": "SAT Subject Tests: English and Mathematics"
             },
             {
                 "service": "ACT",
@@ -70,19 +70,19 @@ export const servicesData = [
         "services": [
             {
                 "service": "College Search Process",
-                "subBullet": "Application review and completion"
+                "subBullet": "Application Review and Completion for Admissions and Enrollment"
             },
             {
-                "service": "Essays",
+                "service": "College Essays",
                 "subBullet": "Guidance and Revision"
             },
             {
-                "service": "Tours",
-                "subBullet": "In person and Online"
+                "service": "College Tours",
+                "subBullet": "In-person and Online"
             },
             {
                 "service": "Mock Interviews",
-                "subBullet": "Admissions and Financial Aid"
+                "subBullet": "Admissions"
             }
         ]
     },
