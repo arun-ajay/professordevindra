@@ -119,12 +119,6 @@ export default class Landing extends Component{
                     <Grid className = {styles.customGrid} >
                         <Grid.Row verticalAlign = {"middle"}>
                             <Grid.Column textAlign = {"center"} width = {16}>
-                            <Transition animation = {leftColumnAnimation} duration = {leftRightColumnAnimationSpeed} visible = {this.state.open}>
-                                <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
-                                    <Icon name='mail outline' />
-                                    professordevindra@gmail.com
-                                </Button>
-                            </Transition>
 
                             </Grid.Column>
 
@@ -172,13 +166,19 @@ export default class Landing extends Component{
                         </Transition>
                         <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
                         <span className = {styles.tagline}>
+                            Reasonable Rates and Immediate Schedule
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+                        <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
+                        <span className = {styles.tagline}>
                             Professor Devindra
                             <br></br><br></br>
                         </span>
                         </Transition>
                         <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
                         <span className = {styles.tagline}>
-                            Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
+                            <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
                             <br></br><br></br>
                         </span>
                         </Transition>
@@ -244,7 +244,7 @@ export default class Landing extends Component{
                     <div className = {styles.landingHero}>
                         
 
-                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                    <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
                         
                         <span className = {styles.tabletTagline}>
                         
@@ -253,18 +253,30 @@ export default class Landing extends Component{
                             <br></br><br></br>
                         </span>
                         </Transition>
+
+                        <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
+                        <span className = {styles.tabletTagline}>
+                            Reasonable Rates and Immediate Schedule
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+
                         <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
                         <span className = {styles.tabletTagline}>
                             Professor Devindra
                             <br></br><br></br>
                         </span>
                         </Transition>
-                        <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
+                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                        
                         <span className = {styles.tabletTagline}>
-                            Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
-                            <br></br><br></br>
+                        
+                        <br></br>
+                        <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
+                                                    <br></br><br></br>
                         </span>
                         </Transition>
+
                         <Transition animation = {"fade down"} duration = {1400} visible = {this.state.open}>
                         <span className = {styles.quote}>
                             <Container textAlign = {"justified"} fluid className = {styles.philHero} >
@@ -355,13 +367,19 @@ export default class Landing extends Component{
                 <Grid.Column only = {"mobile"}  textAlign = {"center"} width = {16} className = {styles.customColumn}>
                     <div className = {styles.landingHero}>
                         
-
-                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                    <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
                         
                         <span className = {styles.mobileTagline}>
                         
                         <br></br>
                             Private, one-to-one tutoring using an online or in-person or hybrid learning management system
+                            <br></br><br></br>
+                        </span>
+                        </Transition>
+
+                        <Transition animation = {"fade down"} duration = {1000} visible = {this.state.open}>
+                        <span className = {styles.mobileTagline}>
+                            Reasonable Rates and Immediate Schedule
                             <br></br><br></br>
                         </span>
                         </Transition>
@@ -371,12 +389,16 @@ export default class Landing extends Component{
                             <br></br><br></br>
                         </span>
                         </Transition>
-                        <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
+                        <Transition animation = {"fade down"} duration = {500} visible = {this.state.open}>
+                        
                         <span className = {styles.mobileTagline}>
-                            Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas
+                        
+                        <br></br>
+                        <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
                             <br></br><br></br>
                         </span>
                         </Transition>
+
                         <Transition animation = {"fade down"} duration = {1400} visible = {this.state.open}>
                         <span className = {styles.quote}>
                             <Container textAlign = {"justified"} fluid className = {styles.philHero} >
@@ -451,20 +473,6 @@ export default class Landing extends Component{
 
                     </Grid>
                 </Grid.Column>
-
-                <Grid.Column only = {"mobile"} textAlign = {"center"} width = {16}>
-                    <br>
-                    </br>
-                    <br></br>
-                    <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
-                        <Icon name='mail outline' />
-                        professordevindra@gmail.com
-                    </Button>
-
-                </Grid.Column>
-
-
-
             </Grid.Row>
 
         )

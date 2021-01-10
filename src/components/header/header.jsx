@@ -24,6 +24,11 @@ export default class SiteHeader extends Component{
         console.log("redirecting");
     }
 
+
+    openEmail = () => {
+        window.location.href = `mailto:${"professordevindra@gmail.com"}?subject=${"Request to Discuss Tutorial Services"}&body=${"Dear Professor Devindra, %0D%0A %0D%0A My name is [BLANK] and I am inquiring about your [SERVICE]. %0D%0A %0D%0A Please contact me at [###-###-####] at your earliest convenience. %0D%0A %0D%0A Thank you for your time and consideration. %0D%0A %0D%0A Sincerely, %0D%0A [BLANK]"}`;
+    }
+
     componentDidMount(){
         this.setState({open: true})
         var path = null
@@ -54,7 +59,10 @@ export default class SiteHeader extends Component{
                 return <Menu.Item header>{data.display}</Menu.Item>
             }
         })
-        
+
+        menuArray.push(
+            <Menu.Item className = {styles.customMenuContact} name = {"Contact"} onClick = {() => this.openEmail()}> <span><Icon name = {"mail outline"}/> Contact: Email Me: professordevindra@gmail.com </span> </Menu.Item>
+        )
         
 
 
@@ -62,7 +70,7 @@ export default class SiteHeader extends Component{
         return(
             <Grid.Row className = {styles.customRow}>
                 <Grid.Column textAlign = {"center"} width = {16} className = {styles.customColumn}>
-                    <Menu compact inverted borderless stackable className = {styles.customMenu}>
+                    <Menu size = {"huge"} compact inverted borderless stackable className = {styles.customMenu}>
                         {menuArray}
                     </Menu>
                 </Grid.Column>

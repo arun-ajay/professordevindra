@@ -102,16 +102,20 @@ export default class Services extends Component{
                 <Grid.Column only = {"mobile tablet"} width = {1}/>
 
 
-                <Grid.Column textAlign = {"center"} width = {16}>
+                {/* <Grid.Column textAlign = {"center"} width = {16}>
                     <br>
                     </br>
                     <br></br>
                     <Button onClick = {() => this.openEmail()} size = {"big"} icon labelPosition='left' className = {styles.email}>
                         <Icon name='mail outline' />
+                        Email me at:
+                        <br></br>
+
+                        <br></br>
                         professordevindra@gmail.com
                     </Button>
 
-                </Grid.Column>
+                </Grid.Column> */}
             </Grid.Row>
         )
     } 
