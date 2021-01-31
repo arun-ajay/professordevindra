@@ -178,7 +178,7 @@ export default class Landing extends Component{
                         </Transition>
                         <Transition animation = {"fade down"} duration = {1250} visible = {this.state.open}>
                         <span className = {styles.tagline}>
-                            <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
+                            <span>College professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
                             <br></br><br></br>
                         </span>
                         </Transition>
@@ -272,7 +272,7 @@ export default class Landing extends Component{
                         <span className = {styles.tabletTagline}>
                         
                         <br></br>
-                        <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
+                        <span>College professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
                                                     <br></br><br></br>
                         </span>
                         </Transition>
@@ -394,7 +394,7 @@ export default class Landing extends Component{
                         <span className = {styles.mobileTagline}>
                         
                         <br></br>
-                        <span>Certified college professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
+                        <span>College professor with <b className = {styles.certified}>30 years</b> of tutorial experience in multiple content areas: click services tab above <Icon name = {"hand pointer outline"}/> </span>
                             <br></br><br></br>
                         </span>
                         </Transition>
